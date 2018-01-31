@@ -1,3 +1,7 @@
+
+Important Note: This repo was forked from https://github.com/NoRedInk/axlsx, commit 1a4a638
+
+--------------------------------------------------------------------------------------------
 Axlsx: Office Open XML Spreadsheet Generation
 ====================================
 [![Build Status](https://secure.travis-ci.org/randym/axlsx.png?branch=master)](http://travis-ci.org/randym/axlsx/)
