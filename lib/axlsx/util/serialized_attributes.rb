@@ -52,9 +52,18 @@ module Axlsx
     def serialized_attributes(str = '', additional_attributes = {})
       attributes = declared_attributes.merge! additional_attributes
       attributes.each do |key, value|
-        str << "#{Axlsx.camel(key, false)}=\"#{Axlsx.camel(Axlsx.booleanize(value), false)}\" "
+        str << "#{Axlsx.camel(key, false)}=\"#{serialized_value(key, value)}\" "
       end
       str
+    end
+
+    def serialized_value(key, value)
+      # We don't want to CamelCase the sheet names if they are snake_cased
+      if key == "name" && value.include?("_")
+        value
+      else
+        Axlsx.camel(Axlsx.booleanize(value), false)
+      end
     end
 
     # A hash of instance variables that have been declared with
