@@ -58,7 +58,7 @@ module Axlsx
     end
 
     def serialized_value(key, value)
-      # We don't want to camelcase the sheet names if they are snake cased
+      # We don't want to CamelCase the sheet names if they are snake_cased
       if key == "name" && value.include?("_")
         value
       else
